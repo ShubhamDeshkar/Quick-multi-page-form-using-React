@@ -51,9 +51,8 @@ class FormPersonalDetails extends Component {
 					<br />
 					<RaisedButton
 						label="Back"
-						// primary={false}
 						style={styles.button}
-						onClick={this.prevStep}
+						onClick={this.back}
 					/>
 					<RaisedButton
 						label="Continue"
