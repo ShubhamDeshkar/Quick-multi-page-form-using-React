@@ -4,7 +4,20 @@ import AppBar from "material-ui/AppBar";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
+import Visibility from "@material-ui/icons/Visibility";
+import { Input } from "@material-ui/core";
+
 class FormUserDetails extends Component {
+	constructor() {
+		super();
+		this.state = {
+			showPassword: false
+		};
+	}
+
 	continue = e => {
 		e.preventDefault();
 		this.props.nextStep();
@@ -13,6 +26,12 @@ class FormUserDetails extends Component {
 	back = e => {
 		e.preventDefault();
 		this.props.prevStep();
+	};
+
+	handleClickShowPassword = () => {
+		this.setState({
+			showPassword: !this.state.showPassword
+		});
 	};
 
 	render() {
@@ -31,6 +50,30 @@ class FormUserDetails extends Component {
 						hintText="Enter your password"
 						floatingLabelText="Password"
 						onChange={handleChange("password")}
+						defaultValue={values.password}
+						type={this.state.showPassword ? "text" : "password"}
+					/>
+					<Input
+						hintText="Enter your password"
+						floatingLabelText="Password"
+						onChange={handleChange("password")}
+						defaultValue={values.password}
+						type={this.state.showPassword ? "text" : "password"}
+						endAdornment={
+							<InputAdornment position="end">
+								<IconButton
+									aria-label="Toggle password visibility"
+									onClick={this.handleClickShowPassword}
+								>
+									{values.showPassword ? <Visibility /> : <VisibilityOff />}
+								</IconButton>
+							</InputAdornment>
+						}
+					/>
+					<TextField
+						hintText="Enter your password"
+						floatingLabelText="Password"
+						onChange={handleChange("password")}
 						// defaultValue={values.password}
 						type="password"
 					/>{" "}
@@ -38,7 +81,7 @@ class FormUserDetails extends Component {
 					<TextField
 						hintText="Confirm your password"
 						floatingLabelText="Password"
-						onChange={handleChange("password")}
+						onChange={handleChange("confirmPassword")}
 						// defaultValue={values.confirmPassword}
 						type="password"
 					/>{" "}
