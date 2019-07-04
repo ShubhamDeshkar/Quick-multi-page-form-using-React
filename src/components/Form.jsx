@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import FormPersonalDetails from "./FormPersonalDetails";
+import FormPersonalDetails from "./FormAddressDetails";
 import FormUserDetails from "./FormUserDetails";
+import Password from "./Password";
 
 class Form extends Component {
 	constructor() {
@@ -83,7 +84,7 @@ class Form extends Component {
 					<FormUserDetails
 						nextStep={this.nextStep}
 						handleChange={this.handleChange}
-						values
+						values={values}
 					/>
 				);
 			case 2:
@@ -92,11 +93,18 @@ class Form extends Component {
 						nextStep={this.nextStep}
 						prevStep={this.prevStep}
 						handleChange={this.handleChange}
-						values
+						values={values}
 					/>
 				);
 			case 3:
-				return <h1>Confirm</h1>;
+				return (
+					<Password
+						nextStep={this.nextStep}
+						prevStep={this.prevStep}
+						handleChange={this.handleChange}
+						values={values}
+					/>
+				);
 			case 4:
 				return <h1>Success!</h1>;
 			default:

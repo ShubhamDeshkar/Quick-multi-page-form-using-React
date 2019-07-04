@@ -49,6 +49,13 @@ class FormPersonalDetails extends Component {
 						defaultValue={values.state}
 					/>{" "}
 					<br />
+					<TextField
+						hintText="Enter your Zipcode"
+						floatingLabelText="Zipcode"
+						onChange={handleChange("zipCode")}
+						defaultValue={values.zipCode}
+					/>{" "}
+					<br />
 					<RaisedButton
 						label="Back"
 						style={styles.button}
