@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import FormPersonalDetails from "./FormAddressDetails";
 import FormUserDetails from "./FormUserDetails";
 import Password from "./Password";
+import Confirm from "./Confirm";
+import Success from "./Success";
 
 class Form extends Component {
 	constructor() {
@@ -43,6 +45,13 @@ class Form extends Component {
 	handleChange = input => e => {
 		this.setState({
 			[input]: e.target.value
+		});
+	};
+
+	// handle reset
+	handleReset = input => {
+		this.setState({
+			step: 1
 		});
 	};
 
@@ -106,7 +115,9 @@ class Form extends Component {
 					/>
 				);
 			case 4:
-				return <h1>Success!</h1>;
+				return <Confirm nextStep={this.nextStep} prevStep={this.prevStep} />;
+			case 5:
+				return <Success reset={this.handleReset} />;
 			default:
 		}
 	}

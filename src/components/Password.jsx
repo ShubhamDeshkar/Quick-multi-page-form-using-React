@@ -5,6 +5,7 @@ import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
 import IconButton from "@material-ui/core/IconButton";
+import { RemoveRedEye } from "@material-ui/icons";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Visibility from "@material-ui/icons/Visibility";
@@ -40,27 +41,34 @@ class FormUserDetails extends Component {
 			<MuiThemeProvider>
 				<React.Fragment>
 					<AppBar title="Enter User Details" />
-					{/* <TextField
-						hintText="Enter your password"
-						floatingLabelText="Password"
-						onChange={handleChange("password")}
-						defaultValue={values.password}
-                    /> */}
-					<TextField
-						hintText="Enter your password"
-						floatingLabelText="Password"
-						onChange={handleChange("password")}
-						defaultValue={values.password}
-						type={this.state.showPassword ? "text" : "password"}
-					/>
-					<Input
+					<div style={{ minHeight: "50vh" }}>
+						<TextField
+							hintText="Enter your password"
+							floatingLabelText="Password"
+							onChange={handleChange("password")}
+							defaultValue={values.password}
+							type={this.state.showPassword ? "text" : "password"}
+							InputProps={{
+								endAdornment: (
+									<InputAdornment position="end">
+										<RemoveRedEye
+											aria-label="Toggle password visibility"
+											onClick={this.handleClickShowPassword}
+										>
+											{values.showPassword ? <Visibility /> : <VisibilityOff />}
+										</RemoveRedEye>
+									</InputAdornment>
+								)
+							}}
+						/>
+						{/* <Input
 						hintText="Enter your password"
 						floatingLabelText="Password"
 						onChange={handleChange("password")}
 						defaultValue={values.password}
 						type={this.state.showPassword ? "text" : "password"}
 						endAdornment={
-							<InputAdornment position="end">
+							<InputAdornment position="start">
 								<IconButton
 									aria-label="Toggle password visibility"
 									onClick={this.handleClickShowPassword}
@@ -69,23 +77,17 @@ class FormUserDetails extends Component {
 								</IconButton>
 							</InputAdornment>
 						}
-					/>
-					<TextField
-						hintText="Enter your password"
-						floatingLabelText="Password"
-						onChange={handleChange("password")}
-						// defaultValue={values.password}
-						type="password"
-					/>{" "}
-					<br />
-					<TextField
-						hintText="Confirm your password"
-						floatingLabelText="Password"
-						onChange={handleChange("confirmPassword")}
-						// defaultValue={values.confirmPassword}
-						type="password"
-					/>{" "}
-					<br />
+					/> */}
+						<br />
+						<TextField
+							hintText="Confirm your password"
+							floatingLabelText="Confirm Password"
+							onChange={handleChange("confirmPassword")}
+							// defaultValue={values.confirmPassword}
+							type="password"
+						/>{" "}
+						<br />
+					</div>
 					<RaisedButton
 						label="Back"
 						style={styles.button}
