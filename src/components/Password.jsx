@@ -40,7 +40,7 @@ class FormUserDetails extends Component {
 		return (
 			<MuiThemeProvider>
 				<React.Fragment>
-					<AppBar title="Enter User Details" />
+					<AppBar title="Setup your Password" />
 					<div style={{ minHeight: "50vh" }}>
 						<TextField
 							hintText="Enter your password"
