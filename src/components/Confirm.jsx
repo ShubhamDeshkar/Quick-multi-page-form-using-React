@@ -9,12 +9,23 @@ class FormUserDetails extends Component {
 		this.props.nextStep();
 	};
 
+	back = e => {
+		e.preventDefault();
+		this.props.prevStep();
+	};
+
 	render() {
 		return (
 			<MuiThemeProvider>
 				<React.Fragment>
 					<AppBar title="Are you sure you want to confirm?" />
 					<div style={{ marginTop: 30 }}>
+						<RaisedButton
+							label="Go Back"
+							primary={false}
+							style={styles.button}
+							onClick={this.back}
+						/>
 						<RaisedButton
 							label="Confirm"
 							primary={true}

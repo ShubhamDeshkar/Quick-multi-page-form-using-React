@@ -12,8 +12,14 @@ class FormUserDetails extends Component {
 		return (
 			<MuiThemeProvider>
 				<React.Fragment>
-					<AppBar title="Enter User Details" />
+					<AppBar title="Thank You!" />
 					<div style={{ marginTop: 30 }}>
+						<h1>
+							Thank you for your input. <br />
+							This was just a demo Form created using Material UI <br />
+						</h1>
+						<h2>Don't worry we did not save any information</h2>
+						<a href="www.materialui.com">Material UI</a>
 						<RaisedButton
 							label="Start Again"
 							primary={true}
