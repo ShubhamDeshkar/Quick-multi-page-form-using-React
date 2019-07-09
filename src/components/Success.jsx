@@ -19,7 +19,17 @@ class FormUserDetails extends Component {
 							This was just a demo Form created using Material UI <br />
 						</h1>
 						<h2>Don't worry we did not save any information</h2>
-						<a href="www.materialui.com">Material UI</a>
+						<a href="www.materialui.com">Check Mterial UI website</a> <br />
+						<div style={{ marginTop: 30, marginBottom: 20 }}>
+							Check the <code>CODE</code> for this Form on GitHub{" "}
+							<a
+								href="https://github.com/ShubhamDeshkar/Quick-multi-page-form-using-React"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								here
+							</a>
+						</div>
 						<RaisedButton
 							label="Start Again"
 							primary={true}
