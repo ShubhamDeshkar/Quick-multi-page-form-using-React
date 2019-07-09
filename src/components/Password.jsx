@@ -4,12 +4,12 @@ import AppBar from "material-ui/AppBar";
 import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 
-import IconButton from "@material-ui/core/IconButton";
+// import IconButton from "@material-ui/core/IconButton";
 import { RemoveRedEye } from "@material-ui/icons";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Visibility from "@material-ui/icons/Visibility";
-import { Input } from "@material-ui/core";
+// import { Input } from "@material-ui/core";
 
 class FormUserDetails extends Component {
 	constructor() {
