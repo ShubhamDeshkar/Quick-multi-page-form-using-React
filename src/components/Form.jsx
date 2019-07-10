@@ -51,7 +51,19 @@ class Form extends Component {
 	// handle reset
 	handleReset = input => {
 		this.setState({
-			step: 1
+			step: 1,
+			firstName: "",
+			lastName: "",
+			email: "",
+			password: "",
+			confirmPassword: "",
+			addressLine1: "",
+			addressLine2: "",
+			city: "",
+			state: "",
+			zipCode: "",
+			phone: "",
+			dob: ""
 		});
 	};
 

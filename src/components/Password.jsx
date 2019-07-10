@@ -52,8 +52,8 @@ class FormUserDetails extends Component {
 						<br />
 						<div style={{ marginLeft: 0 }}>
 							<Checkbox color="default" onChange={this.handleShowPassword} />
-							<div>Show Password</div>
 						</div>
+						<div>Show Password</div>
 					</div>
 					<RaisedButton
 						label="Back"
